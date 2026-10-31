@@ -1,0 +1,8 @@
+__include__:
+- ./dataset/custom.yml
+- ./runtime.yml
+- ./include/dataloader.yml
+- ./include/optimizer.yml
+- ./include/model.yml
+- ./include/upg_detr_m.yml
+output_dir: ./output/upg_detr_m_custom

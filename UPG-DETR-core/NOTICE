@@ -1,0 +1,285 @@
+UPG-DETR core source release
+
+Based on D-FINE: https://github.com/Peterande/D-FINE
+D-FINE authors: Yansong Peng, Hebei Li, Peixi Wu, Yueyi Zhang, Xiaoyan Sun, Feng Wu.
+
+Retained upstream source notices follow. Code comments and docstrings were removed for this release; original notices are preserved here. Core model and loss computations were not redesigned. Release-specific changes are documented in RELEASE_NOTES.md.
+
+src/__init__.py
+---------------
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+
+src/core/__init__.py
+--------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/core/_config.py
+-------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/core/workspace.py
+---------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/core/yaml_config.py
+-----------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/core/yaml_utils.py
+----------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/__init__.py
+--------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/_misc.py
+-----------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/dataloader.py
+----------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/dataset/__init__.py
+----------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/dataset/_dataset.py
+----------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/dataset/coco_dataset.py
+--------------------------------
+Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+Mostly copy-paste from https://github.com/pytorch/vision/blob/13b35ff/references/detection/coco_utils.py
+
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/dataset/coco_eval.py
+-----------------------------
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+COCO evaluator that works in distributed mode.
+Mostly copy-paste from https://github.com/pytorch/vision/blob/edfd5a7/references/detection/coco_eval.py
+The difference is that there is less copy-pasting from pycocotools
+in the end of the file, as python3 can suppress prints with contextlib
+
+# MiXaiLL76 replacing pycocotools with faster-coco-eval for better performance and support.
+
+src/data/dataset/coco_utils.py
+------------------------------
+copy and modified https://github.com/pytorch/vision/blob/main/references/detection/coco_utils.py
+
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/transforms/__init__.py
+-------------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/transforms/_transforms.py
+----------------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/transforms/container.py
+--------------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/data/transforms/mosaic.py
+-----------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/misc/__init__.py
+--------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/misc/box_ops.py
+-------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/misc/dist_utils.py
+----------------------
+reference
+- https://github.com/pytorch/vision/blob/main/references/detection/utils.py
+- https://github.com/facebookresearch/detr/blob/master/util/misc.py#L406
+
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/misc/logger.py
+------------------
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+https://github.com/facebookresearch/detr/blob/main/util/misc.py
+Mostly copy-paste from torchvision references.
+
+src/misc/profiler_utils.py
+--------------------------
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+
+src/misc/visualizer.py
+----------------------
+"
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/optim/__init__.py
+---------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/optim/amp.py
+----------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/optim/ema.py
+----------------
+D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+---------------------------------------------------------------------------------
+Modified from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright (c) 2023 lyuwenyu. All Rights Reserved.
+
+src/optim/optim.py
+------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/optim/warmup.py
+-------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/nn/__init__.py
+------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/nn/backbone/__init__.py
+---------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/nn/backbone/common.py
+-------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/nn/backbone/hgnetv2.py
+--------------------------
+reference
+- https://github.com/PaddlePaddle/PaddleDetection/blob/develop/ppdet/modeling/backbones/hgnet_v2.py
+
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+
+src/solver/__init__.py
+----------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/solver/det_engine.py
+------------------------
+D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+---------------------------------------------------------------------------------
+Modified from DETR (https://github.com/facebookresearch/detr/blob/main/engine.py)
+Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
+
+src/solver/det_solver.py
+------------------------
+D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+---------------------------------------------------------------------------------
+Modified from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright (c) 2023 lyuwenyu. All Rights Reserved.
+
+src/zoo/__init__.py
+-------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/zoo/dfine/box_ops.py
+------------------------
+# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+https://github.com/facebookresearch/detr/blob/main/util/box_ops.py
+
+src/zoo/dfine/defe.py
+---------------------
+Dome-DETR: Dome-DETR: DETR with Density-Oriented Feature-Query Manipulation for Efficient Tiny Object Detection
+Copyright (c) 2025 The Dome-DETR Authors. All Rights Reserved.
+
+src/zoo/dfine/denoising.py
+--------------------------
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+Modifications Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+
+src/zoo/dfine/dfine.py
+----------------------
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+
+src/zoo/dfine/dfine_criterion.py
+--------------------------------
+D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+---------------------------------------------------------------------------------
+Modified from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright (c) 2023 lyuwenyu. All Rights Reserved.
+
+src/zoo/dfine/dfine_decoder.py
+------------------------------
+D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+---------------------------------------------------------------------------------
+Modified from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright (c) 2023 lyuwenyu. All Rights Reserved.
+
+src/zoo/dfine/dfine_utils.py
+----------------------------
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+
+src/zoo/dfine/hybrid_encoder.py
+-------------------------------
+D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+---------------------------------------------------------------------------------
+Modified from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright (c) 2023 lyuwenyu. All Rights Reserved.
+
+src/zoo/dfine/matcher.py
+------------------------
+Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+Modules to compute the matching cost and solve the corresponding LSAP.
+
+Copyright (c) 2024 The D-FINE Authors All Rights Reserved.
+
+src/zoo/dfine/postprocessor.py
+------------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.
+
+src/zoo/dfine/utils.py
+----------------------
+D-FINE: Redefine Regression Task of DETRs as Fine-grained Distribution Refinement
+Copyright (c) 2024 The D-FINE Authors. All Rights Reserved.
+---------------------------------------------------------------------------------
+Modified from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright (c) 2023 lyuwenyu. All Rights Reserved.
+
+src/zoo/dfine/__init__.py
+-------------------------
+Copied from RT-DETR (https://github.com/lyuwenyu/RT-DETR)
+Copyright(c) 2023 lyuwenyu. All Rights Reserved.

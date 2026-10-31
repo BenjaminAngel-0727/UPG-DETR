@@ -1,0 +1,54 @@
+train_dataloader:
+  dataset:
+    transforms:
+      ops:
+      - type: RandomPhotometricDistort
+        p: 0.5
+      - type: RandomZoomOut
+        fill: 0
+      - type: RandomIoUCrop
+        p: 0.8
+      - type: SanitizeBoundingBoxes
+        min_size: 1
+      - type: RandomHorizontalFlip
+      - type: Resize
+        size:
+        - 640
+        - 640
+      - type: SanitizeBoundingBoxes
+        min_size: 1
+      - type: ConvertPILImage
+        dtype: float32
+        scale: true
+      - type: ConvertBoxes
+        fmt: cxcywh
+        normalize: true
+      policy:
+        name: stop_epoch
+        epoch: 72
+        ops:
+        - RandomPhotometricDistort
+        - RandomZoomOut
+        - RandomIoUCrop
+  collate_fn:
+    type: BatchImageCollateFunction
+    base_size: 640
+    base_size_repeat: 3
+    stop_epoch: 72
+  shuffle: true
+  total_batch_size: 8
+  num_workers: 4
+val_dataloader:
+  dataset:
+    transforms:
+      ops:
+      - type: Resize
+        size:
+        - 640
+        - 640
+      - type: ConvertPILImage
+        dtype: float32
+        scale: true
+  shuffle: false
+  total_batch_size: 8
+  num_workers: 4

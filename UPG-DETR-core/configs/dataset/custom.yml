@@ -1,0 +1,37 @@
+task: detection
+evaluator:
+  type: CocoEvaluator
+  iou_types:
+  - bbox
+num_classes: 17
+remap_mscoco_category: true
+train_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/custom/train2017
+    ann_file: ./data/custom/annotations/instances_train2017.json
+    return_masks: false
+    transforms:
+      type: Compose
+      ops: null
+  shuffle: true
+  num_workers: 4
+  drop_last: true
+  collate_fn:
+    type: BatchImageCollateFunction
+val_dataloader:
+  type: DataLoader
+  dataset:
+    type: CocoDetection
+    img_folder: ./data/custom/val2017
+    ann_file: ./data/custom/annotations/instances_val2017.json
+    return_masks: false
+    transforms:
+      type: Compose
+      ops: null
+  shuffle: false
+  num_workers: 4
+  drop_last: false
+  collate_fn:
+    type: BatchImageCollateFunction
